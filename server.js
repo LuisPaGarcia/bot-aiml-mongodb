@@ -35,18 +35,6 @@ io.on('connection', function(socket){
   socket.on('chat message', function(msg){
  
     io.emit('chat message', msg);
-/*
-    db.collection('aiml_mensajes').find({entrada:msg.message}).toArray((err, result) => {
-      if (err) return console.log(err)
-
-      var salida;
-      console.log(typeof result[0]);
-      if(typeof result[0] !== 'undefined' )
-        salida = result[0].salida;
-      else
-        salida = 'No se como contestar.';
-*/
-
     var salida;
     interprete.findAnswer(msg.message.toUpperCase(), function(answer, arr, input) {
       if(answer == undefined){
@@ -77,7 +65,7 @@ io.on('connection', function(socket){
 
     });
 
-//    })
+
 
   });
 
@@ -99,35 +87,3 @@ app.get("/getmen", function(req, res ){
     })
 });
 
-
-// TEMPORALES
-/*
-app.get('/seed/:tipo/:entrada/:salida', (req,res) =>{
-
-  if(req.params.salida == undefined)
-    req.params.salida = 'VENIA VACIO';
-  var mensaje = {
-      entrada:req.params.entrada.toString(),
-      salida:req.params.salida.toString()
-    }
-
-
-  if(req.params.tipo.toString() == "C"){
-  db.collection('mensajes').save(mensaje,(err,result)=>{
-    if(err) return console.log(err);
-    console.log(`save '${mensaje.entrada}' to database`);
-    res.redirect('/getmen');
-  });
-
-  }else if(req.params.tipo.toString() == "D"){
-  
-    db.collection('mensajes')
-    .remove({entrada: mensaje.entrada}, (err, result) => {
-        if (err) return res.send(err)
-        console.log('Deleted', req.params.entrada);
-        res.redirect('/getmen');
-    })
-  }
-
-});
-*/
