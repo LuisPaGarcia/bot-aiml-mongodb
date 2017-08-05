@@ -9,3 +9,10 @@ $ cd botaimlmongodb
 $ npm i 
 $ node server
 ```
+You will see:
+
+```sh
+listening on *:8080
+```
+
+And that's it!
