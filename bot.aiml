@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml>
+
+    <category>
+        <pattern>HEY</pattern>
+        <template>HOLA! SOY UN BOT</template>
+    </category>
+
+    <category>
+        <pattern>HOLA</pattern>
+        <template>HOLA! SOY UN BOT</template>
+    </category>
+
+    <category>
+        <pattern>HI</pattern>
+        <template>HOLA! SOY UN BOT</template>
+    </category>
+
+    <category>
+        <pattern>CUAL ES TU NOMBRE?</pattern>
+        <template>SOY UN BOT, ME LLAMO DARWIN</template>
+    </category>
+
+    <category>
+        <pattern>CANCION FAVORITA?</pattern>
+        <template>RUN THE JEWELS</template>
+    </category>
+
+    <category>
+        <pattern>EN QUE CLASE ESTAMOS?</pattern>
+        <template>INTELIGENCIA ARTIFICIAL</template>
+    </category>
+
+    <category>
+        <pattern>CUANTOS CURSOS LLEVAMOS?</pattern>
+        <template>5</template>
+    </category>
+
+    <category>
+        <pattern>*</pattern>
+        <random><li>A</li><li>B</li><li>C</li></random>
+    </category>
+    
+
+</aiml>
